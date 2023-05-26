@@ -169,7 +169,7 @@
   #post-info
     position: absolute
     top: 0
-    padding: 0 12%
+    padding: 0 calc((100% - 1352px)/ 2)
     width: 100%
     height 100%
     display: flex
@@ -178,6 +178,8 @@
     flex-direction: column;
     z-index: 3
     animation: slide-in 0.6s 0.3s backwards;
+    +maxWidth1400()
+      padding: 0 12%
 
     +maxWidth768()
       padding: 11rem 6% 0;
@@ -215,7 +217,6 @@
       top: 0
       
       a,
-      #site-name,
       #toggle-menu
         color: var(--font-color)
         text-shadow: none
@@ -231,6 +232,14 @@
         opacity: 1;
         transition: 0.3s;
         line-height: 2;
+        +minWidth768()
+          max-width: 15.5rem
+        +minWidth900()
+          max-width: 25.5rem
+        +minWidth1200()
+          max-width: 35.5rem
+        +minWidth2000()
+          max-width: 45.5rem
     #nav 
       #menus
         z-index: 100;
@@ -398,9 +407,9 @@
       color: var(--white)
 
   #site-name
-    // text-shadow: 2px 2px 4px rgba($dark-black, .15)
     font-weight: bold
     cursor: pointer
+    transition: .3s !important
 
   .menus_items
     display: inline
@@ -608,7 +617,7 @@
 [data-theme="dark"] .parallax > use:nth-child(4)
   animation-delay: -5s
   animation-duration: 20s
-  fill: #18171d
+  fill: rgb(0 0 0 / 39%)
 #post-firstinfo
   text-align: left;
   display: flex;
