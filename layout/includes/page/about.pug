@@ -75,24 +75,7 @@ if site.data.about
             img.author-content-img.no-lightbox(alt=careers.tips, src=url_for(careers.img) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'`)
       
       .author-content
-        if theme.LA.enable
-          - let cover = item.statistic.cover
-          .about-statistic.author-content-item(style=`background: url(${cover}) top / cover no-repeat;`)
-            .card-content
-              .author-content-item-tips 数据
-              span.author-content-item-title 访问统计
-              #statistic
-              .post-tips
-                | 统计信息来自 
-                a(href='https://invite.51.la/1NzKqTeb?target=V6', target='_blank', rel='noopener nofollow') 51la网站统计
-              .banner-button-group
-                - let link = item.statistic.link
-                - let text = item.statistic.text
-                a.banner-button(onclick=`pjax.loadUrl("${link}")`)
-                  i.anzhiyufont.anzhiyu-icon-arrow-circle-right
-                  |  
-                  span.banner-button-text=text
-        .author-content-item-group.column.mapAndInfo
+        .author-content-item-group.column.map
           - let mapBackground = item.map.background
           - let mapBackgroundDark = item.map.backgroundDark
           style.
@@ -107,6 +90,38 @@ if site.data.about
             - let mapStrengthenTitle = item.map.StrengthenTitle
             span.map-title=mapTitle
               b=mapStrengthenTitle
+        if theme.LA.enable
+          - let cover = item.statistic.cover
+          .about-statistic.author-content-item(style=`background: url(${cover}) top / cover no-repeat;`)
+            .card-content
+              .author-content-item-tips Info
+              span.author-content-item-title Access Statistics
+              #statistic
+              .post-tips
+                | Statistics sourced from 
+                a(href='https://invite.51.la/1NzKqTeb?target=V6', target='_blank', rel='noopener nofollow') 51la website analytics
+              .banner-button-group
+                - let link = item.statistic.link
+                - let text = item.statistic.text
+                a.banner-button(onclick=`pjax.loadUrl("${link}")`)
+                  i.anzhiyufont.anzhiyu-icon-arrow-circle-right
+                  |  
+                  span.banner-button-text=text
+      
+      .author-content
+        .author-content-item.personalities
+          - let {author_name, personality_type, photo_url, personality_img, name_url} = item.personalities
+          .author-content-item-tips Personality
+          span.author-content-item-title= author_name
+          .title2(style='color:#ac899c')= personality_type
+          .post-tips
+            | Learn more about 
+            a(target='_blank', rel='noopener external nofollow', href= name_url)= author_name
+            |  at 
+            a(href='https://www.16personalities.com/', target='_blank', rel='noopener nofollow') 16personalities
+          .image
+            img.no-lightbox(src=url_for(personality_img), alt='人格')
+        .author-content-item-group.column.selfInfo
           .author-content-item.selfInfo.single
             - let { selfInfoTips1, selfInfoContentYear, selfInfoTips2, selfInfoContent2, selfInfoTips3, selfInfoContent3 } = item.selfInfo
             div
@@ -121,22 +136,8 @@ if site.data.about
               span.selfInfo-title=selfInfoTips3
               |  
               span.selfInfo-content(style='color:#b04fe6')=selfInfoContent3
-      
-      .author-content
-        .author-content-item.personalities
-          - let {author_name, personality_type, photo_url, personality_img, name_url} = item.personalities
-          .author-content-item-tips 性格
-          span.author-content-item-title= author_name
-          .title2(style='color:#ac899c')= personality_type
-          .post-tips
-            | 在 
-            a(href='https://www.16personalities.com/', target='_blank', rel='noopener nofollow') 16personalities
-            |  了解更多关于 
-            a(target='_blank', rel='noopener external nofollow', href= name_url)= author_name
-          .image
-            img.no-lightbox(src=url_for(personality_img), alt='人格')
-        .author-content-item.myphoto
-          img.author-content-img.no-lightbox(alt='自拍', src=url_for(photo_url))
+        //- .author-content-item.myphoto
+        //-   img.author-content-img.no-lightbox(alt='自拍', src=url_for(photo_url))
       
       .author-content
         .author-content-item.maxim
