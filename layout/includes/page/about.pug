@@ -46,6 +46,37 @@ if site.data.about
           .shape.shape-3(style='translate:none;rotate:none;scale:none;transform:translate(721px,180px)')
         .content
           h1=helloAbout
+
+      .author-content
+        .author-content-item.personalities
+          - let {author_name, personality_type, photo_url, personality_img, name_url} = item.personalities
+          .author-content-item-tips Personality
+          span.author-content-item-title= author_name
+          .title2(style='color:#ac899c')= personality_type
+          .post-tips
+            | Learn more about 
+            a(target='_blank', rel='noopener external nofollow', href= name_url)= author_name
+            |  at 
+            a(href='https://www.16personalities.com/', target='_blank', rel='noopener nofollow') 16personalities
+          .image
+            img.no-lightbox(src=url_for(personality_img), alt='人格')
+        .author-content-item-group.column.selfInfo
+          .author-content-item.selfInfo.single
+            - let { selfInfoTips1, selfInfoContentYear, selfInfoTips2, selfInfoContent2, selfInfoTips3, selfInfoContent3 } = item.selfInfo
+            div
+              span.selfInfo-title=selfInfoTips1
+              |  
+              span.selfInfo-content#selfInfo-content-year(style='color:#43a6c6')=selfInfoContentYear
+            div
+              span.selfInfo-title=selfInfoTips2
+              |  
+              span.selfInfo-content(style='color:#c69043')=selfInfoContent2
+            div
+              span.selfInfo-title=selfInfoTips3
+              |  
+              span.selfInfo-content(style='color:#b04fe6')=selfInfoContent3
+        //- .author-content-item.myphoto
+        //-   img.author-content-img.no-lightbox(alt='自拍', src=url_for(photo_url))
       
       .author-content
         .author-content-item.skills
@@ -108,37 +139,6 @@ if site.data.about
                   i.anzhiyufont.anzhiyu-icon-arrow-circle-right
                   |  
                   span.banner-button-text=text
-      
-      .author-content
-        .author-content-item.personalities
-          - let {author_name, personality_type, photo_url, personality_img, name_url} = item.personalities
-          .author-content-item-tips Personality
-          span.author-content-item-title= author_name
-          .title2(style='color:#ac899c')= personality_type
-          .post-tips
-            | Learn more about 
-            a(target='_blank', rel='noopener external nofollow', href= name_url)= author_name
-            |  at 
-            a(href='https://www.16personalities.com/', target='_blank', rel='noopener nofollow') 16personalities
-          .image
-            img.no-lightbox(src=url_for(personality_img), alt='人格')
-        .author-content-item-group.column.selfInfo
-          .author-content-item.selfInfo.single
-            - let { selfInfoTips1, selfInfoContentYear, selfInfoTips2, selfInfoContent2, selfInfoTips3, selfInfoContent3 } = item.selfInfo
-            div
-              span.selfInfo-title=selfInfoTips1
-              |  
-              span.selfInfo-content#selfInfo-content-year(style='color:#43a6c6')=selfInfoContentYear
-            div
-              span.selfInfo-title=selfInfoTips2
-              |  
-              span.selfInfo-content(style='color:#c69043')=selfInfoContent2
-            div
-              span.selfInfo-title=selfInfoTips3
-              |  
-              span.selfInfo-content(style='color:#b04fe6')=selfInfoContent3
-        //- .author-content-item.myphoto
-        //-   img.author-content-img.no-lightbox(alt='自拍', src=url_for(photo_url))
       
       .author-content
         .author-content-item.maxim
