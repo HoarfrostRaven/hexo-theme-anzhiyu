@@ -245,7 +245,7 @@ script.
           rm.hideRightMenu();
           // e.preventDefault();
         },
-        false
+        { passive: true }
       );
     }
     if (document.getElementById("rightMenu")) {
@@ -257,7 +257,7 @@ script.
           rm.hideRightMenu();
           // e.preventDefault();
         },
-        false
+        { passive: true }
       );
     }
   }
@@ -450,7 +450,7 @@ script.
     });
 
     document.getElementById("menu-newwindowimg").addEventListener("click", function () {
-      window.open(domImgSrc, , "_blank");
+      window.open(domImgSrc, "_blank");
       rm.hideRightMenu();
     });
 
