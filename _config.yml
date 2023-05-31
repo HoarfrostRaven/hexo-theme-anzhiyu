@@ -26,16 +26,16 @@ nav:
   travelling: false
   clock: false
   menu:
-    - title: 网页
-      item:
-        - name: 博客
-          link: https://anzhiy.cn/
-          icon: /img/favicon.ico
-    - title: 项目
-      item:
-        - name: 安知鱼图床
-          link: https://image.anzhiy.cn/
-          icon: https://image.anzhiy.cn/favicon.ico
+    # - title: 网页
+    #   item:
+    #     - name: 博客
+    #       link: https://anzhiy.cn/
+    #       icon: /img/favicon.ico
+    # - title: 项目
+    #   item:
+    #     - name: 安知鱼图床
+    #       link: https://image.anzhiy.cn/
+    #       icon: https://image.anzhiy.cn/favicon.ico
 
 # Code Blocks (代码相关)
 # --------------------------------------
