@@ -182,7 +182,7 @@ if site.data.about
                       img(src=i.cover, alt=i.name)
       
       .author-content
-        - let {music_tips, music_title, music_link, music_bg} = item.music
+        - let {music_tips, music_title, music_link, music_bg, music_bottom} = item.music
         - let {like_tips, like_title, like_bottom, like_bg} = item.like
         .author-content-item.like-technology(style=`background: url(${like_bg}) top / cover no-repeat;`)
           .card-content
@@ -195,12 +195,12 @@ if site.data.about
             .author-content-item-tips=music_tips
             span.author-content-item-title=music_title
             .content-bottom
-              .tips=`跟 ${aboutName} 一起欣赏更多音乐`
+              .tips=music_bottom
             .banner-button-group
               a.banner-button(onclick=`pjax.loadUrl("${music_link}")`)
                 i.anzhiyufont.anzhiyu-icon-arrow-circle-right
                 |  
-                span.banner-button-text 更多推荐
+                span.banner-button-text Music
 
       if item.extra
         include ../anzhiyu/about-extra.pug
