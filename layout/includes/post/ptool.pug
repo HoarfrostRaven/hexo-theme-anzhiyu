@@ -35,19 +35,19 @@ if !theme.disable_top_img && page.top_img !== false
       if theme.ptool.share_mobile
         .share-link.mobile
           .share-qrcode
-            .share-button(title='使用手机访问这篇文章')
+            .share-button(title='Read this article on your phone')
               i.anzhiyufont.anzhiyu-icon-qrcode
             .share-main
               .share-main-all
                 #qrcode(title=url)
-                .reward-dec 使用手机访问这篇文章
+                .reward-dec Read this article on your phone
       if theme.ptool.share_weibo
         .share-link.weibo
           a.share-button(target='_blank' href=`https://service.weibo.com/share/share.php?title=${site_title}&url=${url}&pic=${bg_img}` rel='external nofollow noreferrer noopener')
             i.anzhiyufont.anzhiyu-icon-weibo
       if theme.ptool.share_copyurl
         .share-link.copyurl
-          #post-share-url.share-button(title='复制链接' onclick='rm.copyPageUrl()')
+          #post-share-url.share-button(title='Copy link' onclick='rm.copyPageUrl()')
             i.anzhiyufont.anzhiyu-icon-link
   .post-tools-right
     if (!theme.ptool.categories)
