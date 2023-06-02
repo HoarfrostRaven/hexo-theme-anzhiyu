@@ -68,7 +68,7 @@ aside:
       name: Runtime
       unit: days
     last_push_date:
-      name: Last Update
+      name: Updated
     site_wordcount: Words
     site_uv_name: Visitors
     site_pv_name: Visits
