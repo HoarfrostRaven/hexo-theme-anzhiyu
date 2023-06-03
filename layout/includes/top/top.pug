@@ -56,7 +56,7 @@ if home_top_config.enable
                       span.blog-slider__code= item.date.format('YYYY-MM-DD')
                     a.blog-slider__title(href=item.path, alt=item.title)= item.title
                     .blog-slider__text= item.description ? item.description : default_descr
-                    a.blog-slider__button(href=item.path, alt=item.title) Details 
+                    a.blog-slider__button(href=item.path, alt=item.title) Details
             //- 轮播图组件
             .blog-slider__pagination.swiper-pagination-clickable.swiper-pagination-bullets
 
@@ -97,7 +97,7 @@ if home_top_config.enable
             .banner-button-group
               .banner-button(onclick='event.stopPropagation();event.preventDefault();anzhiyu.hideTodayCard();')
                 i.anzhiyufont.anzhiyu-icon-arrow-circle-right
-                span.banner-button-text Recommendations
+                span.banner-button-text Articles
         
         link(rel="stylesheet", href=theme.home_top.banner.top_group_banner_css)
       
