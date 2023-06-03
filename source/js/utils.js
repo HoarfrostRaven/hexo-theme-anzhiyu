@@ -539,18 +539,16 @@ const anzhiyu = {
         t = "";
       return (
         0 <= e && e <= 5
-          ? (t = "晚安😴")
-          : 5 < e && e <= 10
-          ? (t = "早上好👋")
-          : 10 < e && e <= 14
-          ? (t = "中午好👋")
-          : 14 < e && e <= 18
-          ? (t = "下午好👋")
-          : 18 < e && e <= 24 && (t = "晚上好👋"),
+          ? (t = "Good night ! 😴")
+          : 5 < e && e <= 12
+          ? (t = "Good morning ! 👋 ")
+          : 12 < e && e <= 18
+          ? (t = "Good afternoon ! 👋 ")
+          : 18 < e && e <= 24 && (t = "Good evening ! 👋 "),
         t
       );
     };
-    $sayhiEl && ($sayhiEl.innerHTML = getTimeState() + "！我是");
+    $sayhiEl && ($sayhiEl.innerHTML = getTimeState() + "I am");
   },
   // 友链注入预设评论
   addFriendLink() {
