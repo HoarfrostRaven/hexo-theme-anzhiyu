@@ -172,7 +172,7 @@ if site.data.about
       .author-content
         .author-content-item.comic-content
           .card-content
-            - let {movie_tips, movie_title, movie_list} = item.movie
+            - let {movie_tips, movie_title, movie_link, movie_text, movie_list} = item.movie
             .author-content-item-tips=movie_tips
             .author-content-item-title=movie_title
             .comic-box
@@ -181,6 +181,11 @@ if site.data.about
                   a.comic-item(href=i.href, target="_blank", title=i.name)
                     .comic-item-cover
                       img(src=i.cover, alt=i.name)
+            .banner-button-group
+                a.banner-button(onclick=`pjax.loadUrl("${movie_link}")`)
+                  i.anzhiyufont.anzhiyu-icon-arrow-circle-right
+                  |  
+                  span.banner-button-text=movie_text
       
       .author-content
         - let {music_tips, music_title, music_link, music_bg, music_bottom} = item.music

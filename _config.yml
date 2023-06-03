@@ -669,8 +669,19 @@ font:
 # Font settings for the site title and site subtitle
 # 左上角网站名字 主页居中网站名字
 blog_title_font:
-  font_link:
-  font-family: PingFang SC, 'Hiragino Sans GB', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif
+  font_link: https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap # https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap # https://fonts.googleapis.com/css2?family=Pattaya&display=swap
+  font-family: Neonderthaw # , Rubik Moonrocks, Pattaya, PingFang SC, 'Hiragino Sans GB', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif
+
+# 右侧栏作者卡片名字字体
+# 还需要到 aside.styl 文件中修改对应的 css 格式
+card_author_name_font:
+  font_link: https://fonts.googleapis.com/css2?family=Kalam&display=swap
+  font-family: Kalam
+
+# 右侧栏作者卡片描述字体
+card_author_description_font:
+  font_link: https://fonts.googleapis.com/css2?family=Pattaya&display=swap
+  font-family: Pattaya
 
 # The setting of divider icon (水平分隔线图标设置)
 hr_icon:

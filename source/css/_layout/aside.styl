@@ -489,14 +489,17 @@ if hexo-config('aside.enable')
         background-size: 400%;
         animation: gradient 15s ease infinite;
       .card-info
+        .author-info__description
+          font-family: 'Kalam', sans-serif;
         .author-info__name
-            text-align: left;
-            font-weight: bold;
-            color: var(--anzhiyu-white);
-            font-size: 28px;
-            line-height: 1.1;
-            margin-top: 1.3rem;
-            margin-bottom: 1rem;
+          font-family: 'Kalam', sans-serif;
+          text-align: left;
+          font-weight: bold;
+          color: var(--anzhiyu-white);
+          font-size: 28px;
+          line-height: 1.1;
+          margin-top: 1.3rem;
+          margin-bottom: 1rem;
         #author-info__sayhi 
           text-align: left;
           color: var(--anzhiyu-white);
@@ -526,9 +529,15 @@ if hexo-config('aside.enable')
       > .card-widget.card-info
           background: #fff url($card_info_background) top -24% center no-repeat;
           position: relative;
-          .author-info__name 
+          align-items: center;
+          .author-info__description
+            font-family: 'Kalam', sans-serif;
+            text-align: center;
+          .author-info__name
+            text-align: center;
             line-height: 1.5em;
             margin: 4px 0;
+            font-family: 'Kalam', sans-serif;
           #author-info__sayhi
             text-align: left;
             background: var(--anzhiyu-white-op);

@@ -78,6 +78,12 @@ if theme.fancybox
 if theme.blog_title_font &&　theme.blog_title_font.font_link
   link(rel='stylesheet' href=url_for(theme.blog_title_font.font_link) media="print" onload="this.media='all'")
 
+if theme.card_author_name_font &&　theme.card_author_name_font.font_link
+  link(rel='stylesheet' href=url_for(theme.card_author_name_font.font_link) media="print" onload="this.media='all'")
+
+if theme.card_author_description_font &&　theme.card_author_description_font.font_link
+  link(rel='stylesheet' href=url_for(theme.card_author_description_font.font_link) media="print" onload="this.media='all'")
+
 //- global config
 !=partial('includes/head/config', {}, {cache: true})
 
