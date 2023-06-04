@@ -97,17 +97,21 @@
       margin: 0 -20% 0 auto;
       overflow: hidden;
       margin-bottom: 0;
-      filter: blur(10px);
-      opacity: 0.5;
-      animation: showCover 1s 0.3s backwards;
       transform: rotate(10deg) translateY(-10%) scale(2);
       if !hexo-config('post_meta.post.mainTone')
+        filter: blur(10px) brightness(60%);
+        animation: none;
+        transition: filter 0s
         margin: auto
         width: auto
         &::after
           display: none
         img
           border-radius: 0
+      else
+        filter: blur(10px);
+        opacity: 0.5;
+        animation: showCover 1s 0.3s backwards;
 
       +maxWidth768()
         margin: 0 0 0 auto;
@@ -644,7 +648,6 @@
       width: 100%;
       height: 100%;
       display: flex;
-
     span.post-meta-categories
       background: var(--anzhiyu-white-op);
       color: var(--anzhiyu-white);
@@ -681,7 +684,14 @@
       font-size: 17px;
     .anzhiyu-icon-location-dot
       margin-right: 4px
-
+#post
+  #post-info
+    #post-firstinfo
+      .meta-firstline 
+        a.post-meta-original
+          background: var(--anzhiyu-black)
+        .article-meta__tags
+          color: var(--anzhiyu-black)
 +maxWidth768()
   .layout > div:first-child:not(.recent-posts)
     z-index: 10;

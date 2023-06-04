@@ -137,7 +137,7 @@ if (description && ai)
               key: "#{theme.post_head_ai_description.key}",
               Referer: "#{theme.post_head_ai_description.Referer}"
             };
-            const truncateDescription = ("#{pageTitle}" + "#{description}").trim().substring(0, num)
+            const truncateDescription = ("#{pageTitle.replace(/<\/?[^>]+>|&|:|;|quot;|，|,|“|”|"|'|#/g, "")}" + "#{description}").trim().substring(0, num)
 
             const queryParams = `key=${options.key}&content=${truncateDescription}`;
             const requestOptions = {
@@ -166,6 +166,7 @@ if (description && ai)
 
             } catch (error) {
               console.error(error);
+              explanation.innerHTML = "发生异常" + error;
             }
           } else {
             const strArr = "#{ai}".split(",").map(item => item.trim()); // 将字符串转换为数组，去除每个字符串前后的空格
@@ -304,7 +305,7 @@ if (description && ai)
           aiTitleRefreshIcon.style.opacity = "0.2";
           aiTitleRefreshIcon.style.transitionDuration = "0.3s";
           aiTitleRefreshIcon.style.transform = "rotate(" + 360 * refreshNum + "deg)";
-          if (truncateDescription.length <= 1000) {
+          if (truncateDescription.length <= #{basicWordCount}) {
             let param = truncateDescription.length - Math.floor(Math.random() * #{randomNum});
             while (param === prevParam) {
               param = truncateDescription.length - Math.floor(Math.random() * #{randomNum});

@@ -59,6 +59,10 @@ blockquote {
   h4,
   h5,
   h6
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
     .post-content
       line-height: 1.6;
       border-top: 1px dashed var(--anzhiyu-theme-op);
@@ -75,7 +79,7 @@ blockquote {
     display: block
     margin: 0 auto 20px
     max-width: 100%
-    transition: filter 375ms ease-in .2s
+    transition: .3s
     border-radius: 8px
 
   p
@@ -299,8 +303,12 @@ blockquote {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        font-weight: 500
+        
+        &:hover
+          color: var(--anzhiyu-fontcolor)
       &-meta
-        color: $light-blue
+        color: var(--anzhiyu-main)
         font-weight: bold
         min-width: 75px;
 
@@ -333,8 +341,8 @@ blockquote {
           +maxWidth768()
             display: none
           &:hover
-            background: var(--anzhiyu-theme);
-            border-color: var(--anzhiyu-theme);
+            background: var(--anzhiyu-main);
+            border-color: var(--anzhiyu-main);
             color: var(--anzhiyu-white);
 
   .post-outdate-notice
