@@ -173,8 +173,8 @@ if site.data.about
         .author-content-item.movie-content
           .card-content
             - let {movie_tips, movie_title, movie_link, movie_text, movie_list} = item.movie
-            .author-content-item-tips=movie_tips
             .author-content-item-title=movie_title
+            .author-content-item-tips=movie_tips
             .movie-box
               if movie_list
                 each i in movie_list
@@ -186,20 +186,100 @@ if site.data.about
                 i.anzhiyufont.anzhiyu-icon-arrow-circle-right
                 |  
                 span.banner-button-text=movie_text
+        .author-content-item.movie-content
+          .card-content
+            .author-content-item-title="Game"
+            .author-content-item-tips="Journeys of challenge and discovery"
+            - let game_name1 = "The Legend of Zelda"
+            - let game_link1 = "https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild"
+            - let game_cover1 = "https://github.com/HoarfrostRaven/HoarfrostRaven.github.io/blob/main/img/about/game/1.jpg?raw=true"
+            - let game_name2 = "Hollow Knight"
+            - let game_link2 = "https://en.wikipedia.org/wiki/Hollow_Knight"
+            - let game_cover2 = "https://github.com/HoarfrostRaven/HoarfrostRaven.github.io/blob/main/img/about/game/2.jpg?raw=true"
+            - let game_name3 = "Super Mario Odyssey"
+            - let game_link3 = "https://en.wikipedia.org/wiki/Super_Mario_Odyssey"
+            - let game_cover3 = "https://github.com/HoarfrostRaven/HoarfrostRaven.github.io/blob/main/img/about/game/3.jpg?raw=true"
+            - let game_name4 = "Splatoon"
+            - let game_link4 = "https://en.wikipedia.org/wiki/Splatoon_3"
+            - let game_cover4 = "https://github.com/HoarfrostRaven/HoarfrostRaven.github.io/blob/main/img/about/game/4.jpg?raw=true"
+            - let game_name5 = "Persona 5"
+            - let game_link5 = "https://en.wikipedia.org/wiki/Persona_5"
+            - let game_cover5 = "https://github.com/HoarfrostRaven/HoarfrostRaven.github.io/blob/main/img/about/game/5.jpg?raw=true"
+            .movie-box
+              a.movie-item(href=game_link1, target="_blank", title=game_name1)
+                .movie-item-cover
+                  img(src=game_cover1, alt=game_name1)
+              a.movie-item(href=game_link2, target="_blank", title=game_name2)
+                .movie-item-cover
+                  img(src=game_cover2, alt=game_name2)
+              a.movie-item(href=game_link3, target="_blank", title=game_name3)
+                .movie-item-cover
+                  img(src=game_cover3, alt=game_name3)
+              a.movie-item(href=game_link4, target="_blank", title=game_name4)
+                .movie-item-cover
+                  img(src=game_cover4, alt=game_name4)
+              a.movie-item(href=game_link5, target="_blank", title=game_name5)
+                .movie-item-cover
+                  img(src=game_cover5, alt=game_name5)
+            .banner-button-group
+              a.banner-button(onclick=`pjax.loadUrl("/archives")`)
+                i.anzhiyufont.anzhiyu-icon-arrow-circle-right
+                |  
+                span.banner-button-text Game
+        .author-content-item.movie-content
+          .card-content
+            .author-content-item-title="Book"
+            .author-content-item-tips="Doorways to countless worlds"
+            - let book_name1 = "The Lost Salt Gift of Blood"
+            - let book_link1 = "https://en.wikipedia.org/wiki/The_Lost_Salt_Gift_of_Blood"
+            - let book_cover1 = "https://github.com/HoarfrostRaven/HoarfrostRaven.github.io/blob/main/img/about/book/1.jpg?raw=true"
+            - let book_name2 = "Animal Farm"
+            - let book_link2 = "https://en.wikipedia.org/wiki/Animal_Farm"
+            - let book_cover2 = "https://github.com/HoarfrostRaven/HoarfrostRaven.github.io/blob/main/img/about/book/2.jpg?raw=true"
+            - let book_name3 = "The Count of Monte Cristo"
+            - let book_link3 = "https://en.wikipedia.org/wiki/The_Count_of_Monte_Cristo"
+            - let book_cover3 = "https://github.com/HoarfrostRaven/HoarfrostRaven.github.io/blob/main/img/about/book/3.jpg?raw=true"
+            - let book_name4 = "Stories of the Sahara"
+            - let book_link4 = "https://en.wikipedia.org/wiki/Stories_of_the_Sahara"
+            - let book_cover4 = "https://github.com/HoarfrostRaven/HoarfrostRaven.github.io/blob/main/img/about/book/4.jpg?raw=true"
+            - let book_name5 = "Steve Jobs"
+            - let book_link5 = "https://en.wikipedia.org/wiki/Steve_Jobs_(book)"
+            - let book_cover5 = "https://github.com/HoarfrostRaven/HoarfrostRaven.github.io/blob/main/img/about/book/5.jpg?raw=true"
+            .movie-box
+              a.movie-item(href=book_link1, target="_blank", title=book_name1)
+                .movie-item-cover
+                  img(src=book_cover1, alt=book_name1)
+              a.movie-item(href=book_link2, target="_blank", title=book_name2)
+                .movie-item-cover
+                  img(src=book_cover2, alt=book_name2)
+              a.movie-item(href=book_link3, target="_blank", title=book_name3)
+                .movie-item-cover
+                  img(src=book_cover3, alt=book_name3)
+              a.movie-item(href=book_link4, target="_blank", title=book_name4)
+                .movie-item-cover
+                  img(src=book_cover4, alt=book_name4)
+              a.movie-item(href=book_link5, target="_blank", title=book_name5)
+                .movie-item-cover
+                  img(src=book_cover5, alt=book_name5)
+            .banner-button-group
+              a.banner-button(onclick=`pjax.loadUrl("/archives")`)
+                i.anzhiyufont.anzhiyu-icon-arrow-circle-right
+                |  
+                span.banner-button-text Book
       
       .author-content
         - let {music_tips, music_title, music_link, music_bg, music_bottom} = item.music
         - let {like_tips, like_title, like_bottom, like_bg} = item.like
         .author-content-item.like-technology(style=`background: url(${like_bg}) top / cover no-repeat;`)
           .card-content
-            .author-content-item-tips=like_tips
             span.author-content-item-title=like_title
+            .author-content-item-tips=like_tips
             .content-bottom
               .tips=like_bottom
         .author-content-item.like-music(style=`background: url(${music_bg}) top / cover no-repeat;`)
           .card-content
-            .author-content-item-tips=music_tips
             span.author-content-item-title=music_title
+            .author-content-item-tips=music_tips
             .content-bottom
               .tips=music_bottom
             .banner-button-group
