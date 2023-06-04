@@ -182,10 +182,10 @@ if site.data.about
                     .movie-item-cover
                       img(src=i.cover, alt=i.name)
             .banner-button-group
-                a.banner-button(onclick=`pjax.loadUrl("${movie_link}")`)
-                  i.anzhiyufont.anzhiyu-icon-arrow-circle-right
-                  |  
-                  span.banner-button-text=movie_text
+              a.banner-button(onclick=`pjax.loadUrl("${movie_link}")`)
+                i.anzhiyufont.anzhiyu-icon-arrow-circle-right
+                |  
+                span.banner-button-text=movie_text
       
       .author-content
         - let {music_tips, music_title, music_link, music_bg, music_bottom} = item.music
