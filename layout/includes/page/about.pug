@@ -170,16 +170,16 @@ if site.data.about
               .tips.game-yuanshen-uid=game_uid
 
       .author-content
-        .author-content-item.comic-content
+        .author-content-item.movie-content
           .card-content
             - let {movie_tips, movie_title, movie_link, movie_text, movie_list} = item.movie
             .author-content-item-tips=movie_tips
             .author-content-item-title=movie_title
-            .comic-box
+            .movie-box
               if movie_list
                 each i in movie_list
-                  a.comic-item(href=i.href, target="_blank", title=i.name)
-                    .comic-item-cover
+                  a.movie-item(href=i.href, target="_blank", title=i.name)
+                    .movie-item-cover
                       img(src=i.cover, alt=i.name)
             .banner-button-group
                 a.banner-button(onclick=`pjax.loadUrl("${movie_link}")`)
