@@ -286,7 +286,7 @@ if site.data.about
         fetch("https://v6-widget.51.la/v6/#{ck}/quote.js")
           .then(res => res.text())
           .then(data => {
-            let title = ["最近活跃", "今日人数", "今日访问", "昨日人数", "昨日访问", "本月访问", "总访问量"];
+            let title = ["Activity", "Today's Visitors", "Today's Visits", "Yesterday's Visitors", "Yesterday's Visits", "This Month's Visits", "Total Visits"];
             let num = data.match(/(<\/span><span>).*?(\/span><\/p>)/g);
 
             num = num.map(el => {
