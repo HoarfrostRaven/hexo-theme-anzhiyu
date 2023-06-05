@@ -100,10 +100,10 @@ if site.data.about
             .author-content-item-tips=careers.tips
             span.author-content-item-title=careers.title
             .careers-group
-              .careers-item
-                .circle(style='background:#357ef5')
-                each i in careers.item
-                  .name=i
+              each i in careers.item
+                .careers-item
+                  .circle(style='background:' + i.color)
+                  .name=i.name
             img.author-content-img.no-lightbox(alt=careers.tips, src=url_for(careers.img) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'`)
       
       .author-content

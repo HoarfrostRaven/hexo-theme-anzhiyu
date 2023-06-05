@@ -17,19 +17,6 @@
 .author-content-item.careers .careers-item .name {
   color: var(--anzhiyu-secondtext);
 }
-.author-content-item.careers .careers-item {
-  display: flex;
-  align-items: center;
-}
-.author-content-item.careers .careers-item .circle {
-  width: 16px;
-  height: 16px;
-  margin-right: 8px;
-  border-radius: 16px;
-}
-.author-content-item.careers .careers-item .name {
-  color: var(--anzhiyu-secondtext);
-}
 .author-content-item.careers img {
   position: absolute;
   left: 0;
