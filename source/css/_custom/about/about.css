@@ -508,16 +508,6 @@ body[data-type="about"] #web_bg {
   align-items: center;
   justify-content: space-between;
 }
-.author-content-item .content-bottom .icon-group {
-  display: flex;
-  position: relative;
-}
-.author-content-item .content-bottom .icon-group i {
-  display: inline-block;
-  width: 143px;
-  height: 18px;
-  margin-right: 0.5rem;
-}
 
 .author-content-item.game-playing::after {
   box-shadow: 0 -69px 203px 11px #575d8b inset;
@@ -527,6 +517,25 @@ body[data-type="about"] #web_bg {
   height: 100%;
   top: 0;
   left: 0;
+}
+
+.author-content-item.game-playing .game-icon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  height: auto;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.author-content-item.game-playing:hover .game-icon {
+  opacity: 1;
+}
+
+.author-content-item .content-bottom .tips.game-playing-uid {
+  margin-left: auto;
 }
 
 .author-content-item.movie-content {
