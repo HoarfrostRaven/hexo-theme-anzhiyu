@@ -91,8 +91,8 @@ if home_top_config.enable
                 a.article-title(href=item.path, title=item.title)=item.title
           a#todayCard.todayCard(href=top_group_banner_link, style='z-index: 1;')
             .todayCard-info
-              .todayCard-tips=top_group_banner_tips
               .todayCard-title=top_group_banner_title
+              .todayCard-tips=top_group_banner_tips
             .todayCard-cover(style=`background: url(${top_group_banner_image}) no-repeat center /cover`)
             .banner-button-group
               .banner-button(onclick='event.stopPropagation();event.preventDefault();anzhiyu.hideTodayCard();')
