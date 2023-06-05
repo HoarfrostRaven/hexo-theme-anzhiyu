@@ -31,7 +31,7 @@
   background-size: 500px 62.5px;
   background-position-x: 0;
 }
-.author-content-item.game-yuanshen:hover .loading-bar::after {
+.author-content-item.game-playing:hover .loading-bar::after {
   animation: loading-bar 3.5s cubic-bezier(0.28, 0.11, 0.32, 1) infinite forwards;
 }
 

@@ -160,14 +160,14 @@ if site.data.about
             .card-background-icon
               i.anzhiyufont.anzhiyu-icon-dice-d20
         - let {game_tips, game_title, game_uid, game_bg} = item.game
-        .author-content-item.game-yuanshen(style=`background: url(${game_bg}) top / cover no-repeat;`)
+        .author-content-item.game-playing(style=`background: url(${game_bg}) top / cover no-repeat;`)
           .card-content
             .author-content-item-tips=game_tips
             span.author-content-item-title=game_title
             .content-bottom
               .icon-group
-                .loading-bar(role='presentation', aria-hidden='true' style=`${game_title != "原神" ? "display: none": ""}`)
-              .tips.game-yuanshen-uid=game_uid
+                .loading-bar(role='presentation', aria-hidden='true' style=`${game_title != "Tears of the Kingdom" ? "display: none": ""}`)
+              .tips.game-playing-uid=game_uid
 
       .author-content
         .author-content-item.movie-content

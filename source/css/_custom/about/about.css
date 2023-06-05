@@ -494,7 +494,7 @@ body[data-type="about"] #web_bg {
   transform: rotate(30deg);
   transition: 2s ease-in-out;
 }
-.author-content-item.game-yuanshen {
+.author-content-item.game-playing {
   background-size: cover;
   min-height: 300px;
   overflow: hidden;
@@ -519,7 +519,7 @@ body[data-type="about"] #web_bg {
   margin-right: 0.5rem;
 }
 
-.author-content-item.game-yuanshen::after {
+.author-content-item.game-playing::after {
   box-shadow: 0 -69px 203px 11px #575d8b inset;
   position: absolute;
   content: "";
@@ -635,10 +635,10 @@ body[data-type="about"] #web_bg {
   .author-content-item .card-content .banner-button-group .banner-button:hover {
     background: none !important;
   }
-  .author-content-item.game-yuanshen .content-bottom {
+  .author-content-item.game-playing .content-bottom {
     padding-bottom: 10px;
   }
-  .author-content-item.game-yuanshen .game-yuanshen-uid {
+  .author-content-item.game-playing .game-playing-uid {
     display: none;
   }
   .author-content {
