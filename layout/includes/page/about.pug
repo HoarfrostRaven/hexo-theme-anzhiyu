@@ -180,11 +180,11 @@ if site.data.about
                   a.movie-item(href=i.href, target="_blank", title=i.name)
                     .movie-item-cover
                       img(src=i.cover, alt=i.name)
-            .banner-button-group
-              a.banner-button(onclick=`pjax.loadUrl("${movie_link}")`)
-                i.anzhiyufont.anzhiyu-icon-arrow-circle-right
-                |  
-                span.banner-button-text=movie_text
+            //- .banner-button-group
+            //-   a.banner-button(onclick=`pjax.loadUrl("${movie_link}")`)
+            //-     i.anzhiyufont.anzhiyu-icon-arrow-circle-right
+            //-     |  
+            //-     span.banner-button-text=movie_text
         .author-content-item.movie-content
           .card-content
             .author-content-item-title="Game"
@@ -220,11 +220,11 @@ if site.data.about
               a.movie-item(href=game_link5, target="_blank", title=game_name5)
                 .movie-item-cover
                   img(src=game_cover5, alt=game_name5)
-            .banner-button-group
-              a.banner-button(onclick=`pjax.loadUrl("/archives")`)
-                i.anzhiyufont.anzhiyu-icon-arrow-circle-right
-                |  
-                span.banner-button-text Game
+            //- .banner-button-group
+            //-   a.banner-button(onclick=`pjax.loadUrl("/archives")`)
+            //-     i.anzhiyufont.anzhiyu-icon-arrow-circle-right
+            //-     |  
+            //-     span.banner-button-text Game
         .author-content-item.movie-content
           .card-content
             .author-content-item-title="Book"
@@ -260,11 +260,11 @@ if site.data.about
               a.movie-item(href=book_link5, target="_blank", title=book_name5)
                 .movie-item-cover
                   img(src=book_cover5, alt=book_name5)
-            .banner-button-group
-              a.banner-button(onclick=`pjax.loadUrl("/archives")`)
-                i.anzhiyufont.anzhiyu-icon-arrow-circle-right
-                |  
-                span.banner-button-text Book
+            //- .banner-button-group
+            //-   a.banner-button(onclick=`pjax.loadUrl("/archives")`)
+            //-     i.anzhiyufont.anzhiyu-icon-arrow-circle-right
+            //-     |  
+            //-     span.banner-button-text Book
       
       .author-content
         - let {music_tips, music_title, music_link, music_bg, music_bottom} = item.music
@@ -281,11 +281,11 @@ if site.data.about
             .author-content-item-tips=music_tips
             .content-bottom
               .tips=music_bottom
-            .banner-button-group
-              a.banner-button(onclick=`pjax.loadUrl("${music_link}")`)
-                i.anzhiyufont.anzhiyu-icon-arrow-circle-right
-                |  
-                span.banner-button-text Music
+            //- .banner-button-group
+            //-   a.banner-button(onclick=`pjax.loadUrl("${music_link}")`)
+            //-     i.anzhiyufont.anzhiyu-icon-arrow-circle-right
+            //-     |  
+            //-     span.banner-button-text Music
         
       //- - let rawData = item.reward_list
       //- if rawData
