@@ -26,3 +26,6 @@
   width: 100%;
   transition: .6s;
 }
+.clickable {
+  cursor: pointer;
+}
