@@ -7,9 +7,9 @@ if theme.post_copyright.enable && page.copyright !== false
     i.anzhiyufont.anzhiyu-icon-copyright
     .post-copyright__author
       if (page.copyright_author && page.copyright_author !== config.author)
-        a.post-copyright__reprint(title="该文章为转载文章，注意版权协议" href=url_for(url)) 转载
+        a.post-copyright__reprint(title="This article is a reposted article, please pay attention to the copyright agreement" href=url_for(url)) Repost
       else
-        a.post-copyright__original(title="该文章为原创文章，注意版权协议" href=url_for(url)) 原创
+        a.post-copyright__original(title="This article is an original article, please pay attention to the copyright agreement" href=url_for(url)) Original
       a.post-copyright-title
         span=pageTitle
     .post-copyright-info-box
