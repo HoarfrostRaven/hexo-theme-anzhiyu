@@ -369,9 +369,9 @@ script.
 
   // 百度搜索
   rm.searchBaidu = function () {
-    anzhiyu.snackbarShow("即将跳转到百度搜索", false, 2000);
+    anzhiyu.snackbarShow("Searching", false, 2000);
     setTimeout(function () {
-      window.open("https://www.baidu.com/s?wd=" + selectTextNow);
+      window.open("https://www.google.com/search?q=" + selectTextNow);
     }, "2000");
     rm.hideRightMenu();
   };
