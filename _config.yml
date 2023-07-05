@@ -78,14 +78,14 @@ author_status:
 
 # Algolia search
 algolia_search:
-  enable: false
+  enable: true
   hits:
     per_page: 6
 
 # Local search
 local_search:
   enable: false
-  preload: true
+  preload: false
   CDN:
 
 # Math (数学)
