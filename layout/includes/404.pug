@@ -16,7 +16,7 @@
 
     .aside-list
       .aside-list-group
-          - let postLimit = theme.aside.card_recent_post.limit === 0 ? site.posts.length : theme.related_post.limit || 6
+          - let postLimit = theme.aside.card_recent_post.limit === 0 ? site.posts.length : 4
           - let sort = theme.aside.card_recent_post.sort === 'updated' ? 'updated' : 'date'
           - site.posts.sort(sort, -1).limit(postLimit).each(function(article){
             - let link = article.link || article.path
