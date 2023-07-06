@@ -818,7 +818,7 @@ translate:
 readmode: true
 
 # 中控台
-centerConsole: true
+centerConsole: false
 
 # dark mode
 darkmode:
