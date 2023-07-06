@@ -26,16 +26,16 @@ nav:
   travelling: false
   clock: false
   menu:
-    - title: 网页
-      item:
-        - name: 博客
-          link: https://blog.anheyu.com/
-          icon: /img/favicon.ico
-    - title: 项目
-      item:
-        - name: 安知鱼图床
-          link: https://image.anheyu.com/
-          icon: https://image.anheyu.com/favicon.ico
+    # - title: 网页
+    #   item:
+    #     - name: 博客
+    #       link: https://blog.anheyu.com/
+    #       icon: /img/favicon.ico
+    # - title: 项目
+    #   item:
+    #     - name: 安知鱼图床
+    #       link: https://image.anheyu.com/
+    #       icon: https://image.anheyu.com/favicon.ico
 
 # Code Blocks (代码相关)
 # --------------------------------------
@@ -78,14 +78,14 @@ author_status:
 
 # Algolia search
 algolia_search:
-  enable: false
+  enable: true
   hits:
     per_page: 6
 
 # Local search
 local_search:
   enable: false
-  preload: true
+  preload: false
   CDN:
 
 # Math (数学)
@@ -385,14 +385,14 @@ footer:
   runtime:
     enable: true
     launch_time: 04/01/2021 00:00:00 # 网站上线时间
-    work_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-上班摸鱼中.svg
-    work_description: 距离月入25k也就还差一个大佬带我~
-    offduty_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-下班啦.svg
-    offduty_description: 下班了就该开开心心的玩耍，嘿嘿~
+    # work_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-上班摸鱼中.svg
+    # work_description: 距离月入25k也就还差一个大佬带我~
+    # offduty_img: https://npm.elemecdn.com/anzhiyu-blog@2.0.4/img/badge/安知鱼-下班啦.svg
+    # offduty_description: 下班了就该开开心心的玩耍，嘿嘿~
   # 徽标部分配置项 https://shields.io/
   # https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr
   bdageitem:
-    enable: true
+    enable: false
     list:
       - link: https://hexo.io/ #徽标指向网站链接
         shields: https://npm.elemecdn.com/anzhiyu-blog@2.1.5/img/badge/Frame-Hexo.svg #徽标API
@@ -651,8 +651,19 @@ font:
 # Font settings for the site title and site subtitle
 # 左上角网站名字 主页居中网站名字
 blog_title_font:
-  font_link:
-  font-family: PingFang SC, 'Hiragino Sans GB', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif
+  font_link: https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap # https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap # https://fonts.googleapis.com/css2?family=Pattaya&display=swap
+  font-family: Neonderthaw # , Rubik Moonrocks, Pattaya, PingFang SC, 'Hiragino Sans GB', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif
+
+# 右侧栏作者卡片名字字体
+# 还需要到 aside.styl 文件中修改对应的 css 格式
+card_author_name_font:
+  font_link: https://fonts.googleapis.com/css2?family=Kalam&display=swap
+  font-family: Kalam
+
+# 右侧栏作者卡片描述字体
+card_author_description_font:
+  font_link: https://fonts.googleapis.com/css2?family=Pattaya&display=swap
+  font-family: Pattaya
 
 # The setting of divider icon (水平分隔线图标设置)
 hr_icon:
@@ -754,6 +765,10 @@ aside:
     post_count: true
     last_push_date: true
     sort_order: # Don't modify the setting unless you know how it works
+  card_maps:
+    enable: false
+    title: true
+    url:
 
 # busuanzi count for PV / UV in site
 # 访问人数

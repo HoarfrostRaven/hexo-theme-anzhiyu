@@ -13,13 +13,14 @@ if site.data.about
         .author-img
           img.no-lightbox(src=url_for(avatarImg) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt="avatar")
         .image-dot
-      p.p.center.logo.large 关于我
+      p.p.center.logo.large About ME
       p.p.center.small=subtitle
+
       .author-content
         .author-content-item.myInfoAndSayHello
-          .title1 你好，很高兴认识你👋
+          .title1 Bonjour👋
           .title2
-            | 我叫 
+            | I am 
             span.inline-word=aboutName
           .title1=aboutDescription
         .aboutsiteTips.author-content-item
@@ -45,6 +46,37 @@ if site.data.about
           .shape.shape-3(style='translate:none;rotate:none;scale:none;transform:translate(721px,180px)')
         .content
           h1=helloAbout
+
+      .author-content
+        .author-content-item.personalities
+          - let {author_name, personality_type, photo_url, personality_img, name_url} = item.personalities
+          .author-content-item-tips Personality
+          span.author-content-item-title= author_name
+          .title2(style='color:#ac899c')= personality_type
+          .post-tips
+            | Learn more about 
+            a(target='_blank', rel='noopener external nofollow', href= name_url)= author_name
+            |  at 
+            a(href='https://www.16personalities.com/', target='_blank', rel='noopener nofollow') 16personalities
+          .image
+            img.no-lightbox(src=url_for(personality_img), alt='人格')
+        .author-content-item-group.column.selfInfo
+          .author-content-item.selfInfo.single
+            - let { selfInfoTips1, selfInfoContentYear, selfInfoTips2, selfInfoContent2, selfInfoTips3, selfInfoContent3 } = item.selfInfo
+            div
+              span.selfInfo-title=selfInfoTips1
+              |  
+              span.selfInfo-content#selfInfo-content-year(style='color:#43a6c6')=selfInfoContentYear
+            div
+              span.selfInfo-title=selfInfoTips2
+              |  
+              span.selfInfo-content(style='color:#c69043')=selfInfoContent2
+            div
+              span.selfInfo-title=selfInfoTips3
+              |  
+              span.selfInfo-content(style='color:#b04fe6')=selfInfoContent3
+        //- .author-content-item.myphoto
+        //-   img.author-content-img.no-lightbox(alt='自拍', src=url_for(photo_url))
       
       .author-content
         .author-content-item.skills
@@ -68,31 +100,14 @@ if site.data.about
             .author-content-item-tips=careers.tips
             span.author-content-item-title=careers.title
             .careers-group
-              .careers-item
-                .circle(style='background:#357ef5')
-                each i in careers.item
-                  .name=i
+              each i in careers.item
+                .careers-item
+                  .circle(style='background:' + i.color)
+                  span.name.clickable(onclick=`window.open('${i.link}')`)= i.name
             img.author-content-img.no-lightbox(alt=careers.tips, src=url_for(careers.img) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'`)
       
       .author-content
-        if theme.LA.enable
-          - let cover = item.statistic.cover
-          .about-statistic.author-content-item(style=`background: url(${cover}) top / cover no-repeat;`)
-            .card-content
-              .author-content-item-tips 数据
-              span.author-content-item-title 访问统计
-              #statistic
-              .post-tips
-                | 统计信息来自 
-                a(href='https://invite.51.la/1NzKqTeb?target=V6', target='_blank', rel='noopener nofollow') 51la网站统计
-              .banner-button-group
-                - let link = item.statistic.link
-                - let text = item.statistic.text
-                a.banner-button(onclick=`pjax.loadUrl("${link}")`)
-                  i.anzhiyufont.anzhiyu-icon-arrow-circle-right
-                  |  
-                  span.banner-button-text=text
-        .author-content-item-group.column.mapAndInfo
+        .author-content-item-group.column.map
           - let mapBackground = item.map.background
           - let mapBackgroundDark = item.map.backgroundDark
           style.
@@ -107,169 +122,241 @@ if site.data.about
             - let mapStrengthenTitle = item.map.StrengthenTitle
             span.map-title=mapTitle
               b=mapStrengthenTitle
-          .author-content-item.selfInfo.single
-            - let { selfInfoTips1, selfInfoContentYear, selfInfoTips2, selfInfoContent2, selfInfoTips3, selfInfoContent3 } = item.selfInfo
-            div
-              span.selfInfo-title=selfInfoTips1
-              |  
-              span.selfInfo-content#selfInfo-content-year(style='color:#43a6c6')=selfInfoContentYear
-            div
-              span.selfInfo-title=selfInfoTips2
-              |  
-              span.selfInfo-content(style='color:#c69043')=selfInfoContent2
-            div
-              span.selfInfo-title=selfInfoTips3
-              |  
-              span.selfInfo-content(style='color:#b04fe6')=selfInfoContent3
+        if theme.LA.enable
+          - let cover = item.statistic.cover
+          .about-statistic.author-content-item(style=`background: url(${cover}) top / cover no-repeat;`)
+            .card-content
+              .author-content-item-tips Info
+              span.author-content-item-title Access Statistics
+              #statistic
+              .post-tips
+                | Statistics from 
+                a(href='https://invite.51.la/1NzKqTeb?target=V6', target='_blank', rel='noopener nofollow') 51LA
+              .banner-button-group
+                - let link = item.statistic.link
+                - let text = item.statistic.text
+                a.banner-button(onclick=`pjax.loadUrl("${link}")`)
+                  i.anzhiyufont.anzhiyu-icon-arrow-circle-right
+                  |  
+                  span.banner-button-text=text
       
       .author-content
-        .author-content-item.personalities
-          - let {author_name, personality_type, photo_url, personality_img, name_url} = item.personalities
-          .author-content-item-tips 性格
-          span.author-content-item-title= author_name
-          .title2(style='color:#ac899c')= personality_type
-          .post-tips
-            | 在 
-            a(href='https://www.16personalities.com/', target='_blank', rel='noopener nofollow') 16personalities
-            |  了解更多关于 
-            a(target='_blank', rel='noopener external nofollow', href= name_url)= author_name
-          .image
-            img.no-lightbox(src=url_for(personality_img), alt='人格')
-        .author-content-item.myphoto
-          img.author-content-img.no-lightbox(alt='自拍', src=url_for(photo_url))
-      
-      .author-content
-        .author-content-item.maxim
-          - let {maxim_tips, maxim_top, maxim_bottom} = item.maxim
-          .author-content-item-tips=maxim_tips
-          span.maxim-title
-            span(style='opacity:.6;margin-bottom:8px')=maxim_top
-            |  
-            span=maxim_bottom
-        .author-content-item.buff
-          .card-content
-          - let {buff_tips, buff_top, buff_bottom} = item.buff
-            .author-content-item-tips=buff_tips
-            span.buff-title
-              span(style='opacity:.6;margin-bottom:8px')=buff_top
+        .author-content-item-group.column.maxim
+          .author-content-item.maxim
+            - let {maxim_tips, maxim_top, maxim_bottom} = item.maxim
+            .author-content-item-tips=maxim_tips
+            span.maxim-title
+              span(style='opacity:.6;margin-bottom:8px')=maxim_top
               |  
-              span=buff_bottom
-          .card-background-icon
-            i.anzhiyufont.anzhiyu-icon-dice-d20
-
-      .author-content
-        - let {game_tips, game_title, game_uid, game_bg} = item.game
-        .author-content-item.game-yuanshen(style=`background: url(${game_bg}) top / cover no-repeat;`)
+              span=maxim_bottom
+          .author-content-item.buff
+            .card-content
+            - let {buff_tips, buff_top, buff_bottom} = item.buff
+              .author-content-item-tips=buff_tips
+              span.buff-title
+                span(style='opacity:.6;margin-bottom:8px')=buff_top
+                |  
+                span=buff_bottom
+            .card-background-icon
+              i.anzhiyufont.anzhiyu-icon-dice-d20
+        - let {game_tips, game_title, game_uid, game_bg, game_icon} = item.game
+        .author-content-item.game-playing(style=`background: url(${game_bg}) top / cover no-repeat;`)
           .card-content
             .author-content-item-tips=game_tips
             span.author-content-item-title=game_title
             .content-bottom
-              .icon-group
-                .loading-bar(role='presentation', aria-hidden='true' style=`${game_title != "原神" ? "display: none": ""}`)
-              .tips.game-yuanshen-uid=game_uid
-        .author-content-item.comic-content
+              img.game-icon(src=game_icon, alt=game_title)
+              .tips.game-playing-uid=game_uid
+
+      .author-content
+        .author-content-item.movie-content
           .card-content
-            - let {comic_tips, comic_title, comic_list} = item.comic
-            .author-content-item-tips=comic_tips
-            .author-content-item-title=comic_title
-            .comic-box
-              if comic_list
-                each i in comic_list
-                  a.comic-item(href=i.href, target="_blank", title=i.name)
-                    .comic-item-cover
+            - let {movie_tips, movie_title, movie_link, movie_text, movie_list} = item.movie
+            .author-content-item-title=movie_title
+            .author-content-item-tips=movie_tips
+            .movie-box
+              if movie_list
+                each i in movie_list
+                  a.movie-item(href=i.href, target="_blank", title=i.name)
+                    .movie-item-cover
                       img(src=i.cover, alt=i.name)
+            //- .banner-button-group
+            //-   a.banner-button(onclick=`pjax.loadUrl("${movie_link}")`)
+            //-     i.anzhiyufont.anzhiyu-icon-arrow-circle-right
+            //-     |  
+            //-     span.banner-button-text=movie_text
+        .author-content-item.movie-content
+          .card-content
+            .author-content-item-title="Game"
+            .author-content-item-tips="Journeys of challenge and discovery"
+            - let game_name1 = "The Legend of Zelda"
+            - let game_link1 = "https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild"
+            - let game_cover1 = "https://github.com/HoarfrostRaven/HoarfrostRaven.github.io/blob/main/img/about/game/1.jpg?raw=true"
+            - let game_name2 = "Hollow Knight"
+            - let game_link2 = "https://en.wikipedia.org/wiki/Hollow_Knight"
+            - let game_cover2 = "https://github.com/HoarfrostRaven/HoarfrostRaven.github.io/blob/main/img/about/game/2.jpg?raw=true"
+            - let game_name3 = "Super Mario Odyssey"
+            - let game_link3 = "https://en.wikipedia.org/wiki/Super_Mario_Odyssey"
+            - let game_cover3 = "https://github.com/HoarfrostRaven/HoarfrostRaven.github.io/blob/main/img/about/game/3.jpg?raw=true"
+            - let game_name4 = "Splatoon"
+            - let game_link4 = "https://en.wikipedia.org/wiki/Splatoon_3"
+            - let game_cover4 = "https://github.com/HoarfrostRaven/HoarfrostRaven.github.io/blob/main/img/about/game/4.jpg?raw=true"
+            - let game_name5 = "Persona 5"
+            - let game_link5 = "https://en.wikipedia.org/wiki/Persona_5"
+            - let game_cover5 = "https://github.com/HoarfrostRaven/HoarfrostRaven.github.io/blob/main/img/about/game/5.jpg?raw=true"
+            .movie-box
+              a.movie-item(href=game_link1, target="_blank", title=game_name1)
+                .movie-item-cover
+                  img(src=game_cover1, alt=game_name1)
+              a.movie-item(href=game_link2, target="_blank", title=game_name2)
+                .movie-item-cover
+                  img(src=game_cover2, alt=game_name2)
+              a.movie-item(href=game_link3, target="_blank", title=game_name3)
+                .movie-item-cover
+                  img(src=game_cover3, alt=game_name3)
+              a.movie-item(href=game_link4, target="_blank", title=game_name4)
+                .movie-item-cover
+                  img(src=game_cover4, alt=game_name4)
+              a.movie-item(href=game_link5, target="_blank", title=game_name5)
+                .movie-item-cover
+                  img(src=game_cover5, alt=game_name5)
+            //- .banner-button-group
+            //-   a.banner-button(onclick=`pjax.loadUrl("/archives")`)
+            //-     i.anzhiyufont.anzhiyu-icon-arrow-circle-right
+            //-     |  
+            //-     span.banner-button-text Game
+        .author-content-item.movie-content
+          .card-content
+            .author-content-item-title="Book"
+            .author-content-item-tips="Doorways to countless worlds"
+            - let book_name1 = "The Lost Salt Gift of Blood"
+            - let book_link1 = "https://en.wikipedia.org/wiki/The_Lost_Salt_Gift_of_Blood"
+            - let book_cover1 = "https://github.com/HoarfrostRaven/HoarfrostRaven.github.io/blob/main/img/about/book/1.jpg?raw=true"
+            - let book_name2 = "Animal Farm"
+            - let book_link2 = "https://en.wikipedia.org/wiki/Animal_Farm"
+            - let book_cover2 = "https://github.com/HoarfrostRaven/HoarfrostRaven.github.io/blob/main/img/about/book/2.jpg?raw=true"
+            - let book_name3 = "The Count of Monte Cristo"
+            - let book_link3 = "https://en.wikipedia.org/wiki/The_Count_of_Monte_Cristo"
+            - let book_cover3 = "https://github.com/HoarfrostRaven/HoarfrostRaven.github.io/blob/main/img/about/book/3.jpg?raw=true"
+            - let book_name4 = "Stories of the Sahara"
+            - let book_link4 = "https://en.wikipedia.org/wiki/Stories_of_the_Sahara"
+            - let book_cover4 = "https://github.com/HoarfrostRaven/HoarfrostRaven.github.io/blob/main/img/about/book/4.jpg?raw=true"
+            - let book_name5 = "Steve Jobs"
+            - let book_link5 = "https://en.wikipedia.org/wiki/Steve_Jobs_(book)"
+            - let book_cover5 = "https://github.com/HoarfrostRaven/HoarfrostRaven.github.io/blob/main/img/about/book/5.jpg?raw=true"
+            .movie-box
+              a.movie-item(href=book_link1, target="_blank", title=book_name1)
+                .movie-item-cover
+                  img(src=book_cover1, alt=book_name1)
+              a.movie-item(href=book_link2, target="_blank", title=book_name2)
+                .movie-item-cover
+                  img(src=book_cover2, alt=book_name2)
+              a.movie-item(href=book_link3, target="_blank", title=book_name3)
+                .movie-item-cover
+                  img(src=book_cover3, alt=book_name3)
+              a.movie-item(href=book_link4, target="_blank", title=book_name4)
+                .movie-item-cover
+                  img(src=book_cover4, alt=book_name4)
+              a.movie-item(href=book_link5, target="_blank", title=book_name5)
+                .movie-item-cover
+                  img(src=book_cover5, alt=book_name5)
+            //- .banner-button-group
+            //-   a.banner-button(onclick=`pjax.loadUrl("/archives")`)
+            //-     i.anzhiyufont.anzhiyu-icon-arrow-circle-right
+            //-     |  
+            //-     span.banner-button-text Book
       
       .author-content
-        - let {music_tips, music_title, music_link, music_bg} = item.music
+        - let {music_tips, music_title, music_link, music_bg, music_bottom} = item.music
         - let {like_tips, like_title, like_bottom, like_bg} = item.like
         .author-content-item.like-technology(style=`background: url(${like_bg}) top / cover no-repeat;`)
           .card-content
-            .author-content-item-tips=like_tips
             span.author-content-item-title=like_title
+            .author-content-item-tips=like_tips
             .content-bottom
               .tips=like_bottom
         .author-content-item.like-music(style=`background: url(${music_bg}) top / cover no-repeat;`)
           .card-content
-            .author-content-item-tips=music_tips
             span.author-content-item-title=music_title
+            .author-content-item-tips=music_tips
             .content-bottom
-              .tips=`跟 ${aboutName} 一起欣赏更多音乐`
-            .banner-button-group
-              a.banner-button(onclick=`pjax.loadUrl("${music_link}")`)
-                i.anzhiyufont.anzhiyu-icon-arrow-circle-right
-                |  
-                span.banner-button-text 更多推荐
+              .tips=music_bottom
+            //- .banner-button-group
+            //-   a.banner-button(onclick=`pjax.loadUrl("${music_link}")`)
+            //-     i.anzhiyufont.anzhiyu-icon-arrow-circle-right
+            //-     |  
+            //-     span.banner-button-text Music
 
       if page.content
         .author-content
           .create-site-post.author-content-item.single
             != page.content
         
-      - let rawData = item.reward_list
-      if rawData
-        - let sortedByDate = rawData.slice().sort((a, b) => new Date(b.datatime) - new Date(a.datatime));
-        .author-content
-          .author-content-item.single.reward#about-reward
-            .author-content-item-tips 致谢
-            span.author-content-item-title 赞赏名单
-            .author-content-item-description 感谢因为有你们，让我更加有创作的动力。
-              .reward-list-all
-                - let reward_list_amount = item.reward_list.sort((a,b)=>b.amount -  a.amount)
-                each item, index in reward_list_amount
-                  .reward-list-item
-                    .reward-list-item-name=item.name
-                    .reward-list-bottom-group
-                      if item.amount >= 50
-                        .reward-list-item-money(style='background:var(--anzhiyu-yellow)')=`¥${item.amount}`
-                      else 
-                        .reward-list-item-money=`¥${item.amount + (item.suffix ? item.suffix : "")}`
-                      .datatime.reward-list-item-time(datatime=item.datatime)=new Date(item.datatime).toISOString().slice(0, -14)
-              .reward-list-updateDate
-                | 最新更新时间： 
-                time.datatime.reward-list-updateDate-time(datatime=sortedByDate[0].datatime)=new Date(sortedByDate[0].datatime).toISOString().slice(0, -14)
-            .about-reward
-              #con
-              #TA-con(onclick="anzhiyu.rewardShowConsole()")
-                #text-con
-                  #linght
-                  #TA 为TA充电
-              #tube-con
-                svg(viewBox='0 0 1028 385', fill='none', xmlns='http://www.w3.org/2000/svg')
-                  path(d='M1 77H234.226L307.006 24H790', stroke='#e5e9ef', stroke-width='20')
-                  path(d='M0 140H233.035L329.72 71H1028', stroke='#e5e9ef', stroke-width='20')
-                  path(d='M1 255H234.226L307.006 307H790', stroke='#e5e9ef', stroke-width='20')
-                  path(d='M0 305H233.035L329.72 375H1028', stroke='#e5e9ef', stroke-width='20')
-                  rect(y='186', width='236', height='24', fill='#e5e9ef')
-                  ellipse(cx='790', cy='25.5', rx='25', ry='25.5', fill='#e5e9ef')
-                  circle(r='14', transform='matrix(1 0 0 -1 790 25)', fill='white')
-                  ellipse(cx='790', cy='307.5', rx='25', ry='25.5', fill='#e5e9ef')
-                  circle(r='14', transform='matrix(1 0 0 -1 790 308)', fill='white')
-                #mask
-                  svg(viewBox='0 0 1028 385', fill='none', xmlns='http://www.w3.org/2000/svg')
-                    path(d='M1 77H234.226L307.006 24H790', stroke='#f25d8e', stroke-width='20')
-                    path(d='M0 140H233.035L329.72 71H1028', stroke='#f25d8e', stroke-width='20')
-                    path(d='M1 255H234.226L307.006 307H790', stroke='#f25d8e', stroke-width='20')
-                    path(d='M0 305H233.035L329.72 375H1028', stroke='#f25d8e', stroke-width='20')
-                    rect(y='186', width='236', height='24', fill='#f25d8e')
-                    ellipse(cx='790', cy='25.5', rx='25', ry='25.5', fill='#f25d8e')
-                    circle(r='14', transform='matrix(1 0 0 -1 790 25)', fill='white')
-                    ellipse(cx='790', cy='307.5', rx='25', ry='25.5', fill='#f25d8e')
-                    circle(r='14', transform='matrix(1 0 0 -1 790 308)', fill='white')
-                #orange-mask
-                  svg(viewBox='0 0 1028 385', fill='none', xmlns='http://www.w3.org/2000/svg')
-                    path(d='M1 77H234.226L307.006 24H790', stroke='#ffd52b', stroke-width='20')
-                    path(d='M0 140H233.035L329.72 71H1028', stroke='#ffd52b', stroke-width='20')
-                    path(d='M1 255H234.226L307.006 307H790', stroke='#ffd52b', stroke-width='20')
-                    path(d='M0 305H233.035L329.72 375H1028', stroke='#ffd52b', stroke-width='20')
-                    rect(y='186', width='236', height='24', fill='#ffd52b')
-                    ellipse(cx='790', cy='25.5', rx='25', ry='25.5', fill='#ffd52b')
-                    circle(r='14', transform='matrix(1 0 0 -1 790 25)', fill='white')
-                    ellipse(cx='790', cy='307.5', rx='25', ry='25.5', fill='#ffd52b')
-                    circle(r='14', transform='matrix(1 0 0 -1 790 308)', fill='white')
-                p#people
-                  | 共
-                  b=item.reward_list.length
-                  | 人
+      //- - let rawData = item.reward_list
+      //- if rawData
+      //-   - let sortedByDate = rawData.slice().sort((a, b) => new Date(b.datatime) - new Date(a.datatime));
+      //-   .author-content
+      //-     .author-content-item.single.reward#about-reward
+      //-       .author-content-item-tips Acknowledgements
+      //-       span.author-content-item-title Donor List
+      //-       .author-content-item-description Each donation fuels a star, illuminating my inspiration.
+      //-         .reward-list-all
+      //-           - let reward_list_amount = item.reward_list.sort((a,b)=>b.amount -  a.amount)
+      //-           each item, index in reward_list_amount
+      //-             .reward-list-item
+      //-               .reward-list-item-name=item.name
+      //-               .reward-list-bottom-group
+      //-                 if item.amount >= 50
+      //-                   .reward-list-item-money(style='background:var(--anzhiyu-yellow)')=`¥${item.amount}`
+      //-                 else 
+      //-                   .reward-list-item-money=`¥${item.amount + (item.suffix ? item.suffix : "")}`
+      //-                 .datatime.reward-list-item-time(datatime=item.datatime)=new Date(item.datatime).toISOString().slice(0, -14)
+      //-         .reward-list-updateDate
+      //-           | Updated: 
+      //-           time.datatime.reward-list-updateDate-time(datatime=sortedByDate[0].datatime)=new Date(sortedByDate[0].datatime).toISOString().slice(0, -14)
+      //-       .about-reward
+      //-         #con
+      //-         #TA-con(onclick="anzhiyu.rewardShowConsole()")
+      //-           #text-con
+      //-             #linght
+      //-             #TA 为 TA 充电
+      //-         #tube-con
+      //-           svg(viewBox='0 0 1028 385', fill='none', xmlns='http://www.w3.org/2000/svg')
+      //-             path(d='M1 77H234.226L307.006 24H790', stroke='#e5e9ef', stroke-width='20')
+      //-             path(d='M0 140H233.035L329.72 71H1028', stroke='#e5e9ef', stroke-width='20')
+      //-             path(d='M1 255H234.226L307.006 307H790', stroke='#e5e9ef', stroke-width='20')
+      //-             path(d='M0 305H233.035L329.72 375H1028', stroke='#e5e9ef', stroke-width='20')
+      //-             rect(y='186', width='236', height='24', fill='#e5e9ef')
+      //-             ellipse(cx='790', cy='25.5', rx='25', ry='25.5', fill='#e5e9ef')
+      //-             circle(r='14', transform='matrix(1 0 0 -1 790 25)', fill='white')
+      //-             ellipse(cx='790', cy='307.5', rx='25', ry='25.5', fill='#e5e9ef')
+      //-             circle(r='14', transform='matrix(1 0 0 -1 790 308)', fill='white')
+      //-           #mask
+      //-             svg(viewBox='0 0 1028 385', fill='none', xmlns='http://www.w3.org/2000/svg')
+      //-               path(d='M1 77H234.226L307.006 24H790', stroke='#f25d8e', stroke-width='20')
+      //-               path(d='M0 140H233.035L329.72 71H1028', stroke='#f25d8e', stroke-width='20')
+      //-               path(d='M1 255H234.226L307.006 307H790', stroke='#f25d8e', stroke-width='20')
+      //-               path(d='M0 305H233.035L329.72 375H1028', stroke='#f25d8e', stroke-width='20')
+      //-               rect(y='186', width='236', height='24', fill='#f25d8e')
+      //-               ellipse(cx='790', cy='25.5', rx='25', ry='25.5', fill='#f25d8e')
+      //-               circle(r='14', transform='matrix(1 0 0 -1 790 25)', fill='white')
+      //-               ellipse(cx='790', cy='307.5', rx='25', ry='25.5', fill='#f25d8e')
+      //-               circle(r='14', transform='matrix(1 0 0 -1 790 308)', fill='white')
+      //-           #orange-mask
+      //-             svg(viewBox='0 0 1028 385', fill='none', xmlns='http://www.w3.org/2000/svg')
+      //-               path(d='M1 77H234.226L307.006 24H790', stroke='#ffd52b', stroke-width='20')
+      //-               path(d='M0 140H233.035L329.72 71H1028', stroke='#ffd52b', stroke-width='20')
+      //-               path(d='M1 255H234.226L307.006 307H790', stroke='#ffd52b', stroke-width='20')
+      //-               path(d='M0 305H233.035L329.72 375H1028', stroke='#ffd52b', stroke-width='20')
+      //-               rect(y='186', width='236', height='24', fill='#ffd52b')
+      //-               ellipse(cx='790', cy='25.5', rx='25', ry='25.5', fill='#ffd52b')
+      //-               circle(r='14', transform='matrix(1 0 0 -1 790 25)', fill='white')
+      //-               ellipse(cx='790', cy='307.5', rx='25', ry='25.5', fill='#ffd52b')
+      //-               circle(r='14', transform='matrix(1 0 0 -1 790 308)', fill='white')
+      //-           p#people
+      //-             | Total 
+      //-             b=item.reward_list.length
+      //-             |  donors
 
 
     script(src=url_for(theme.asset.countup_js))
@@ -280,7 +367,7 @@ if site.data.about
         fetch("https://v6-widget.51.la/v6/#{ck}/quote.js")
           .then(res => res.text())
           .then(data => {
-            let title = ["最近活跃", "今日人数", "今日访问", "昨日人数", "昨日访问", "本月访问", "总访问量"];
+            let title = ["Activity", "Today's Visitors", "Today's Visits", "Yesterday's Visitors", "Yesterday's Visits", "This Month's Visits", "Total Visits"];
             let num = data.match(/(<\/span><span>).*?(\/span><\/p>)/g);
 
             num = num.map(el => {

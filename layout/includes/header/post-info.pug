@@ -3,9 +3,9 @@
   #post-firstinfo
     .meta-firstline
       if (page.copyright_author && page.copyright_author !== config.author)
-        a.post-meta-original 转载
+        a.post-meta-original Repost
       else 
-        a.post-meta-original 原创
+        a.post-meta-original Original
       if (theme.post_meta.post.categories && page.categories && page.categories.data.length > 0)
         span.post-meta-categories
           if (theme.post_meta.post.date_type)
@@ -18,11 +18,12 @@
               i.anzhiyufont.anzhiyu-icon-angle-right.post-meta-separator
       if (theme.post_meta.page.tags)
         span.article-meta.tags
-          each item, index in page.tags.data
-            a(href=url_for(item.path) tabindex="-1").article-meta__tags 
-              span 
-                i.anzhiyufont.anzhiyu-icon-hashtag
-                =item.name
+          if page.tags
+            each item, index in page.tags.data
+              a(href=url_for(item.path)).article-meta__tags 
+                span 
+                  i.anzhiyufont.anzhiyu-icon-hashtag
+                  =item.name
 
   h1.post-title= page.title || _p('no_title')
     if theme.post_edit.enable

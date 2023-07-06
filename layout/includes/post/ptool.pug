@@ -27,19 +27,19 @@ if !theme.disable_top_img && page.top_img !== false
       if theme.ptool.share_mobile
         .share-link.mobile
           .share-qrcode
-            .share-button(title='使用手机访问这篇文章')
+            .share-button(title='Read this article on your phone')
               i.anzhiyufont.anzhiyu-icon-qrcode
             .share-main
               .share-main-all
                 #qrcode(title=url)
-                .reward-dec 使用手机访问这篇文章
+                .reward-dec Read this article on your phone
       if theme.ptool.share_weibo
         .share-link.weibo
           a.share-button(target='_blank' href=`https://service.weibo.com/share/share.php?title=${site_title}&url=${url}&pic=${bg_img}` rel='external nofollow noreferrer noopener')
             i.anzhiyufont.anzhiyu-icon-weibo
       if theme.ptool.share_copyurl
         .share-link.copyurl
-          #post-share-url.share-button(title='复制链接' onclick='rm.copyPageUrl()')
+          #post-share-url.share-button(title='Copy link' onclick='rm.copyPageUrl()')
             i.anzhiyufont.anzhiyu-icon-link
   .post-tools-right
     if (!theme.ptool.categories)
@@ -47,12 +47,13 @@ if !theme.disable_top_img && page.top_img !== false
         .post-meta__box
           if (theme.post_meta.post.tags)
             .post-meta__box__tag-list
-              each item, index in page.tags.data
-                a(href=url_for(item.path)).post-meta__box__tags
-                  span.tags-punctuation 
-                    i.anzhiyufont.anzhiyu-icon-tag
-                  =item.name
-                  span.tagsPageCount=item.length
+              if page.tags
+                each item, index in page.tags.data
+                  a(href=url_for(item.path)).post-meta__box__tags
+                    span.tags-punctuation 
+                      i.anzhiyufont.anzhiyu-icon-tag
+                    =item.name
+                    span.tagsPageCount=item.length
 
       !=partial('includes/third-party/share/index.pug', {}, {cache: true})
 if theme.ptool.categories

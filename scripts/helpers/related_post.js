@@ -8,29 +8,31 @@
 
 hexo.extend.helper.register("related_posts", function (currentPost, allPosts) {
   let relatedPosts = [];
-  currentPost.tags.forEach(function (tag) {
-    allPosts.forEach(function (post) {
-      if (isTagRelated(tag.name, post.tags)) {
-        const relatedPost = {
-          title: post.title,
-          path: post.path,
-          cover: post.cover,
-          randomcover: post.randomcover,
-          weight: 1,
-          updated: post.updated,
-          created: post.date,
-        };
-        const index = findItem(relatedPosts, "path", post.path);
-        if (index !== -1) {
-          relatedPosts[index].weight += 1;
-        } else {
-          if (currentPost.path !== post.path) {
-            relatedPosts.push(relatedPost);
+  if (currentPost.tags) {
+    currentPost.tags.forEach(function (tag) {
+      allPosts.forEach(function (post) {
+        if (isTagRelated(tag.name, post.tags)) {
+          const relatedPost = {
+            title: post.title,
+            path: post.path,
+            cover: post.cover,
+            randomcover: post.randomcover,
+            weight: 1,
+            updated: post.updated,
+            created: post.date,
+          };
+          const index = findItem(relatedPosts, "path", post.path);
+          if (index !== -1) {
+            relatedPosts[index].weight += 1;
+          } else {
+            if (currentPost.path !== post.path) {
+              relatedPosts.push(relatedPost);
+            }
           }
         }
-      }
+      });
     });
-  });
+  }
   if (relatedPosts.length === 0) {
     return "";
   }
