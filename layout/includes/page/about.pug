@@ -174,7 +174,7 @@ if site.data.about
             - let {movie_tips, movie_title, movie_link, movie_text, movie_list} = item.movie
             .author-content-item-title=movie_title
             .author-content-item-tips=movie_tips
-            .movie-box
+            .gallery-box
               if movie_list
                 each i in movie_list
                   a.movie-item(href=i.href, target="_blank", title=i.name)
@@ -204,7 +204,7 @@ if site.data.about
             - let game_name5 = "Persona 5"
             - let game_link5 = "https://en.wikipedia.org/wiki/Persona_5"
             - let game_cover5 = "https://github.com/HoarfrostRaven/HoarfrostRaven.github.io/blob/main/img/about/game/5.jpg?raw=true"
-            .movie-box
+            .gallery-box
               a.movie-item(href=game_link1, target="_blank", title=game_name1)
                 .movie-item-cover
                   img(src=game_cover1, alt=game_name1)
@@ -244,7 +244,7 @@ if site.data.about
             - let book_name5 = "Steve Jobs"
             - let book_link5 = "https://en.wikipedia.org/wiki/Steve_Jobs_(book)"
             - let book_cover5 = "https://github.com/HoarfrostRaven/HoarfrostRaven.github.io/blob/main/img/about/book/5.jpg?raw=true"
-            .movie-box
+            .gallery-box
               a.movie-item(href=book_link1, target="_blank", title=book_name1)
                 .movie-item-cover
                   img(src=book_cover1, alt=book_name1)
