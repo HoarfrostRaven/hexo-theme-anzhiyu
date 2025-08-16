@@ -21,6 +21,7 @@ no_title: No title
 post:
   created: Created
   updated: Updated
+  latest: Latest
   wordcount: Word count
   min2read: Reading time
   min2read_unit: min
@@ -74,7 +75,7 @@ aside:
     site_pv_name: Visits
   more_button: More
   card_newest_comments:
-    headline: Newest Comments
+    headline: Latest Comments
     loading_text: loading...
     error: Unable to get the data, please make sure the settings are correct.
     zero: No Comment

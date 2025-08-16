@@ -21,6 +21,7 @@ no_title: 无题
 post:
   created: 发表于
   updated: 更新于
+  latest: 最新发布
   wordcount: 字数总计
   min2read: 阅读时长
   min2read_unit: 分钟

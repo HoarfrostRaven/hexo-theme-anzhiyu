@@ -21,6 +21,7 @@ no_title: 無題
 post:
   created: 發表於
   updated: 更新於
+  latest: Latest
   wordcount: 字數總計
   min2read: 閱讀時長
   min2read_unit: 分鐘
