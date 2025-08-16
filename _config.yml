@@ -720,7 +720,6 @@ aside:
     category: false
   card_author:
     enable: true
-    type: 2 # 1为使用头像card 2为不使用头像card
     description: # 默认为站点描述
     info_background: https://bu.dusays.com/2023/04/23/6444b2b59a295.webp # type为1时有效
     button:
