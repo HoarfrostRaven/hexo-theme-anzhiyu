@@ -11,22 +11,6 @@
       each item, index in rightInfo
         a.deal_link(href=url_for(item.link) title=item.title)
           i(class=item.icon)
-  if theme.footer.list.enable
-    - let projectList = theme.footer.list.project
-    #anzhiyu-footer
-      each item, index in projectList
-        .footer-group
-          .footer-title=item.title
-          .footer-links
-            each iten, indey in item.links
-              a.footer-item(title=iten.title target="_blank" href=iten.link)=iten.title
-      if theme.footer.list.randomFriends > 0
-        .footer-group
-          .footer-title-group
-            .footer-title 友链
-            a.random-friends-btn#footer-random-friends-btn(href="javascript:addFriendLinksInFooter();" title="换一批友情链接")
-              i.anzhiyufont.anzhiyu-icon-arrow-rotate-right
-          .footer-links#friend-links-in-footer
 
   if theme.footer.owner.enable
     - var now = new Date()
