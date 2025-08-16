@@ -2,9 +2,8 @@ if theme.aside.card_author.enable
   .card-widget.card-info
     .author-info-top 
       .card-info-avatar
-        if theme.aside.card_author.type === 1
-          a.avatar-img(href='/about')
-            img(src=url_for(theme.avatar.img) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt="avatar")
+        a.avatar-img(href='/about')
+          img(src=url_for(theme.avatar.img) onerror=`this.onerror=null;this.src='` + url_for(theme.error_img.flink) + `'` alt="avatar")
         if theme.author_status.enable
           .author-status-box
             .author-status
