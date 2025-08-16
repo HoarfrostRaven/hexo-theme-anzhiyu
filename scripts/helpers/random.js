@@ -7,9 +7,11 @@ hexo.extend.generator.register("random", function (locals) {
     if (post.random !== false) posts.push(post.path);
   }
 
-  let result = `var posts=${JSON.stringify(
-    posts
-  )};function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};`;
+  // 定义 toRandomPost() 方法，调用时会随机跳转到某一篇文章
+  let result = `var posts=${JSON.stringify(posts)};
+  function toRandomPost(){
+    pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);
+  };`;
 
   return {
     path: config.path || "anzhiyu/random.js",
