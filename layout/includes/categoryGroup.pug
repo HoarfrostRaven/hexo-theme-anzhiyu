@@ -2,8 +2,6 @@
   #category-bar.category-bar
       #catalog-bar
         #catalog-list
-          //- .catalog-list-item(id='Home')
-          //-   a(href="/") Home
           !=catalog_list("categories")
         .category-bar-next#category-bar-next(onclick="anzhiyu.scrollCategoryBarToRight()")
           i.anzhiyufont.anzhiyu-icon-angle-double-right

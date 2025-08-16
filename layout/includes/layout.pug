@@ -1,4 +1,7 @@
+//- Hexo 入口
+//- 如果侧边栏 (aside) 开启且配置了 hide，则给 <html> 标签加上 hide-aside class，否则为空
 - var htmlClassHideAside = theme.aside.enable && theme.aside.hide ? 'hide-aside' : ''
+//- 根据当前页面类型（归档、分类、标签）决定是否显示侧边栏
 - page.aside = is_archive() ? theme.aside.display.archive: is_category() ? theme.aside.display.category : is_tag() ? theme.aside.display.tag : page.aside
 - var hideAside = !theme.aside.enable || page.aside === false ? 'hide-aside' : ''
 - var pageType = is_post() ? 'post' : 'page'

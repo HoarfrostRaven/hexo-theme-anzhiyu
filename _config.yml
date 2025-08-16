@@ -13,7 +13,6 @@ menu:
   #   音乐馆: /music/ || anzhiyu-icon-music
   #   追番页: /bangumis/ || anzhiyu-icon-bilibili
   #   相册集: /album/ || anzhiyu-icon-images
-  #   小空调: /air-conditioner/ || anzhiyu-icon-fan
 
   # 关于:
   #   关于本人: /about/ || anzhiyu-icon-paper-plane
@@ -467,12 +466,6 @@ google_adsense:
   client:
   enable_page_level_ads: true
 
-# Insert ads manually (手动插入广告)
-# ad:
-#   index:
-#   aside:
-#   post:
-
 # Verification (站长验证)
 # --------------------------------------
 
@@ -670,11 +663,13 @@ aside:
   display:
     archive: true
     tag: true
-    category: false
+    category: true
   card_author:
     enable: true
     description: # 默认为站点描述
     info_background: https://bu.dusays.com/2023/04/23/6444b2b59a295.webp
+    # 右侧栏作者卡片字体
+    # 还需要到 aside.styl 文件中修改对应的 css 格式
     name_font_link: https://fonts.googleapis.com/css2?family=Kalam&display=swap
     description_font_link: https://fonts.googleapis.com/css2?family=Kalam&display=swap
     button:
